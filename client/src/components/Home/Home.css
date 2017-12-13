@@ -1,0 +1,149 @@
+:root {
+  --gradient-color1: #E87887;
+  --gradient-color2: #F4C5A5;
+  --compliment-color: #45A16F;
+  --compliment-color-darker: #459260;
+}
+
+html::-webkit-scrollbar-track
+{
+  border-radius: 20px;
+  background-color: transparent;
+  margin-right: 2px;
+}
+
+html::-webkit-scrollbar
+{
+  background: var(--gradient-color1); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, var(--gradient-color1), var(--gradient-color2)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, var(--gradient-color1), var(--gradient-color2)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, var(--gradient-color1), var(--gradient-color2)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, var(--gradient-color1), var(--gradient-color2)); /* Standard syntax */
+
+  margin-right: 2px;
+}
+
+html::-webkit-scrollbar-thumb
+{
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.3);
+  margin-right: 2px;
+}
+
+
+body {
+  height: 100%;
+
+  background: var(--gradient-color1); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, var(--gradient-color1), var(--gradient-color2)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, var(--gradient-color1), var(--gradient-color2)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, var(--gradient-color1), var(--gradient-color2)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, var(--gradient-color1), var(--gradient-color2)); /* Standard syntax */
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#homeContent @media (min-width: 768px) {
+
+}
+
+#home {
+  display: flex;
+  align-items: center;
+}
+
+#home img {
+  width: 100%;
+  height: auto;
+}
+
+#home #title {
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+#logos {
+  display: flex;
+  align-items: center;
+}
+
+#logos img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 70px;
+}
+
+#waves-container {
+  position: relative;
+  z-index: -1;
+}
+
+#waves, #waves2, #waves3, #waves4 {
+  position: fixed;
+  width: 100vw;
+}
+
+#waves {
+  bottom: -71px;
+  left: 0;
+
+  opacity: 0.3;
+  filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+#waves2 {
+  bottom: -120px;
+  left: 0;
+
+  opacity: 0.75;
+  filter: alpha(opacity=75); /* For IE8 and earlier */
+}
+
+#waves3 {
+  bottom: -151px;
+  left: -30px;
+
+  opacity: 0.3;
+  filter: alpha(opacity=30); /* For IE8 and earlier */
+
+  -ms-transform: rotate(-8deg); /* IE 9 */
+  -webkit-transform: rotate(-8deg) scaleX(-1); /* Chrome, Safari, Opera */
+  transform: rotate(-8deg) scaleX(-1);
+
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -ms-filter: "FlipH";
+}
+
+#waves4 {
+  bottom: -50px;
+  left: -10px;
+
+  opacity: 0.2;
+  filter: alpha(opacity=20); /* For IE8 and earlier */
+
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg) scaleX(-1); /* Chrome, Safari, Opera */
+  transform: rotate(-2deg) scaleX(-1);
+
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -ms-filter: "FlipH";
+}
+
+@media screen and (max-width: 767px) {
+  #home {
+    flex-direction: column-reverse;
+  }
+
+  #home #title {
+    font-size: 30px !important;
+  }
+
+  #waves, #waves2, #waves3, #waves4 {
+    width: 260vw;
+  }
+}
+

@@ -1,0 +1,126 @@
+:root {
+  --app-left-width: 60vw
+}
+
+#left-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--app-left-width);
+  background: url('numbers-money-calculating-calculation.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: .25;
+  z-index: -2;
+}
+
+/*#app-container {*/
+/*-webkit-transition: 1s; !* For Safari 3.1 to 6.0 *!*/
+/*transition: 1s;*/
+/*}*/
+
+#left-container {
+  position: absolute;
+  height: 100vh;
+  width: var(--app-left-width);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 calc(var(--app-left-width) / 5);
+}
+
+#left-container #title span {
+  font-size: 40px;
+}
+
+#right-container {
+  position: fixed;
+  height: 100vh;
+  width: calc(100vw - var(--app-left-width));
+  top: 0;
+  left: var(--app-left-width);
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+  padding: 5vh calc(var(--app-left-width) / 7) 16vh calc(var(--app-left-width) / 7);
+  color: var(--dark);
+  -webkit-box-shadow: -5px 0 40px -2px #474747;
+  box-shadow: -5px 0 40px -2px #474747;
+}
+
+#right-container #right {
+  padding-right: 0;
+  margin-right: 0;
+  background: white no-repeat center center fixed;
+}
+
+#bankIconContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#bankIcon {
+  width: 120px;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  #app-container {
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+  }
+
+  #left-background {
+    width: 100vw;
+  }
+
+  #left-container, #right-container {
+    position: relative;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
+  }
+
+  #left-container {
+    padding: 30px 60px;
+  }
+
+  #left-container #title span {
+    font-size: 32px;
+  }
+
+  #right-container {
+    padding: 30px 60px;
+    display: block;
+  }
+
+  #right-container #bankConnectionForm {
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 575px) {
+  #app-container #left-container .alert {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-absolute {
+    position: absolute;
+    z-index: 10;
+  }
+}

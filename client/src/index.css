@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #fefefe !important;
+}
+
+.btn-custom-green {
+  color: white;
+  background-color: #45A16F;
+  border-color: #45A16F;
+}
+
+.btn-custom-green:hover {
+  background-color: #428e5f;
+  border-color: #428e5f;
+}

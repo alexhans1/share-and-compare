@@ -1,0 +1,26 @@
+#editBankConnection {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  border-color: var(--dark);
+  color: var(--dark);
+}
+
+#app-container #left-container .alert {
+  max-width: 80%;
+  padding-left: 45px;
+}
+
+#app-container #left-container .collapse {
+  position: absolute;
+  top: 30px;
+  left: 5px;
+}
+
+#app-container #left-container .collapse .btn {
+  margin-top: 5px;
+}
