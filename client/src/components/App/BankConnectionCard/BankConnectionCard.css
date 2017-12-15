@@ -15,12 +15,13 @@
   padding-left: 45px;
 }
 
-#app-container #left-container .collapse {
+#app-container #left-container .collapse, #app-container #left-container .collapsing {
   position: absolute;
   top: 30px;
   left: 5px;
+  z-index: 1;
 }
 
-#app-container #left-container .collapse .btn {
+#app-container #left-container .collapse .btn, #app-container #left-container .collapsing .btn {
   margin-top: 5px;
 }

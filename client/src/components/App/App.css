@@ -17,11 +17,6 @@
   z-index: -2;
 }
 
-/*#app-container {*/
-/*-webkit-transition: 1s; !* For Safari 3.1 to 6.0 *!*/
-/*transition: 1s;*/
-/*}*/
-
 #left-container {
   position: absolute;
   height: 100vh;

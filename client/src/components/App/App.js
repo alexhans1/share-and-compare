@@ -15,22 +15,22 @@ class App extends Component {
     this.state = {
       carsharingCosts: null,
       chartData: [],
-      isCollapsed: true,
       connections: [
         {
-          // id: Date.now(),
-          // bankId: '',
-          // bankName: '',
-          // bankingUserId: '',
-          // bankingPIN: '',
-          // submitted: false,
-
           id: Date.now(),
-          bankId: '123',
-          bankName: 'Deutsche kreditbank Berlin',
+          bankId: '',
+          bankName: '',
           bankingUserId: '',
           bankingPIN: '',
-          submitted: true,
+          submitted: false,
+          isCollapsed: false,
+
+          // id: Date.now(),
+          // bankId: '123',
+          // bankName: 'Deutsche kreditbank Berlin',
+          // bankingUserId: '',
+          // bankingPIN: '',
+          // submitted: true,
         },
       ],
       banksData: {
@@ -129,9 +129,11 @@ class App extends Component {
     });
   }
 
-  toggleCollapse() {
+  toggleCollapse(connectionId) {
+    let connections = this.state.connections;
+    connections.find(({id}) => connectionId === id).isCollapsed = !connections.find(({id}) => connectionId === id).isCollapsed;
     this.setState({
-      isCollapsed: !this.state.isCollapsed,
+      connections,
     });
   }
 
@@ -166,6 +168,7 @@ class App extends Component {
       bankingUserId: '',
       bankingPIN: '',
       submitted: false,
+      isCollapsed: false,
     });
 
     this.setState({
@@ -218,7 +221,7 @@ class App extends Component {
   };
 
   render() {
-    const { banksData, connections, isCollapsed } = this.state;
+    const { banksData, connections } = this.state;
     banksData.banks = banksData.banks || [];
 
     let loader = (this.state.showLoader) ? <div className={'spinner-container'}><Loader /></div> : null;
@@ -246,7 +249,6 @@ class App extends Component {
                     <div key={connection.id} className="d-flex flex-column">
                       {(index === 0) ? <h1 className="mb-3">Bank Connections:</h1> : null}
                       <BankConnectionCard connection={connection}
-                                          isCollapsed={isCollapsed}
                                           deleteBankConnection={this.deleteConnection}
                                           toggleCollapse={this.toggleCollapse} />
                       {

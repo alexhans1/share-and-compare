@@ -13,9 +13,9 @@ class FormComponent extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps() {
     this.setState({
-      showLoader: !nextProps.banksData.banks || !nextProps.banksData.banks.length,
+      showLoader: false,
     });
   }
 

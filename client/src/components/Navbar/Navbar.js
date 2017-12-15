@@ -13,7 +13,6 @@ class myNavbar extends Component {
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.closeToggle = this.closeToggle.bind(this);
     this.state = {
-      showModal: false,
       isOpen: false,
     };
   }
@@ -29,12 +28,6 @@ class myNavbar extends Component {
   toggleNavbar() {
     this.setState({
       isOpen: !this.state.isOpen,
-    });
-  }
-
-  toggleModal() {
-    this.setState({
-      showModal: !this.state.showModal,
     });
   }
 
