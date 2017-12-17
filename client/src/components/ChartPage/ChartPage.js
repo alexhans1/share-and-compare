@@ -23,6 +23,7 @@ class ChartPage extends Component {
   }
 
   componentWillMount() {
+    this.getChartData();
     BankStore.on('fetch', this.getChartData);
   }
 

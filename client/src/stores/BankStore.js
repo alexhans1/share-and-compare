@@ -1,6 +1,6 @@
 import {EventEmitter} from "events";
 import dispatcher from "../Dispatcher";
-import SampleData from './SampleData';
+// import SampleData from './SampleData';
 
 class BankStore extends EventEmitter {
   constructor() {
@@ -10,11 +10,11 @@ class BankStore extends EventEmitter {
     this.providers = null;
     this.banks = null;
 
-    setTimeout(() => {
-      this.chartData = SampleData.chartData;
-      this.providers = SampleData.providers;
-      this.emit('fetch');
-    }, 1000)
+    // setTimeout(() => {
+    //   this.chartData = SampleData.chartData;
+    //   this.providers = SampleData.providers;
+    //   this.emit('fetch');
+    // }, 1000)
 
   }
 
