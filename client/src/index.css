@@ -1,3 +1,11 @@
+:root {
+  --gradient-color1: #E87887;
+  --gradient-color2: #F4C5A5;
+  --compliment-color: #45A16F;
+  --compliment-color-darker: #428e5f;
+  --menu-background-color: #e5f0f2;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,12 +14,12 @@ body {
 }
 
 .btn-custom-green {
-  color: white;
-  background-color: #45A16F;
-  border-color: #45A16F;
+  color: #fefefe;
+  background-color: var(--compliment-color);
+  border-color: var(--compliment-color);
 }
 
 .btn-custom-green:hover {
-  background-color: #428e5f;
-  border-color: #428e5f;
+  background-color: var(--compliment-color-darker);
+  border-color: var(--compliment-color-darker);
 }

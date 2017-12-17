@@ -1,10 +1,3 @@
-:root {
-  --gradient-color1: #E87887;
-  --gradient-color2: #F4C5A5;
-  --compliment-color: #45A16F;
-  --compliment-color-darker: #459260;
-}
-
 html::-webkit-scrollbar-track
 {
   border-radius: 20px;

@@ -40,7 +40,7 @@
   width: calc(100vw - var(--app-left-width));
   top: 0;
   left: var(--app-left-width);
-  background: #f2f2f2;
+  background: var(--menu-background-color);
   display: flex;
   flex-direction: column;
   align-items: stretch;

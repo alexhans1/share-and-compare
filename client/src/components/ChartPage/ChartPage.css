@@ -1,0 +1,75 @@
+:root {
+  --chartMenuWidthInt: 20;
+  --chartMenuWidth: 20vw;
+  --chartMenuMinWidth: 250px;
+}
+
+#chartPage-background {
+  background: url('street-rain.jpeg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: .20;
+  z-index: -2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+#chartPage-left-container {
+  width: calc(100vw - var(--chartMenuWidth));
+}
+
+#chartMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  padding: 100px 30px;
+  background: var(--menu-background-color);
+  width: var(--chartMenuWidth);
+  min-width: var(--chartMenuMinWidth);
+  color: var(--dark);
+  -webkit-box-shadow: -5px 0 40px -2px #474747;
+  box-shadow: -5px 0 40px -2px #474747;
+  transition: all .4s;
+  -webkit-transition: all .4s; /* (Safari) */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.hideChartMenu {
+  right: calc(var(--chartMenuWidth) * -1) !important;
+}
+
+#chartMenuToggle {
+  position: absolute;
+  right: calc(var(--chartMenuWidth) - 87px - 15px);
+  top: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark);
+  font-size: 20px;
+  z-index: 2;
+}
+
+#chartMenuToggle i {
+  font-size: 30px;
+}
+
+@media (max-width: 1250px) {
+  #chartMenuToggle {
+    right: calc(var(--chartMenuMinWidth) - 87px - 15px);
+  }
+
+  .hideChartMenu {
+    right: calc(var(--chartMenuMinWidth) * -1) !important;
+  }
+}
