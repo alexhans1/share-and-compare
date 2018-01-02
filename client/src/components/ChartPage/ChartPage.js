@@ -34,12 +34,22 @@ class ChartPage extends Component {
   getChartData() {
     const providers = BankStore.getProviders();
     if (!providers) {
-      return
+      return;
     }
-    const providerNames = providers.map(({name}) => name);
-    const providerColors = providers.map(({color}) => color);
+
+    // create provider names and color arrays
+    const providerNames = [], providerColors = [];
+    providers.forEach((provider) => {
+      if (this.state.typeFilters[provider.type]) {
+        providerNames.push(provider.name);
+        providerColors.push(provider.color);
+      }
+    });
+
     const rawData = BankStore.getChartData() || [];
     let columns = ['Month', ...providerNames, 'Average', 'Sum'];
+
+    // 1. create an object with all relevant months
     let months = [];
     rawData.forEach((transaction) => {
       if (!months.includes(transaction.date.substring(0,7))) {
@@ -47,16 +57,21 @@ class ChartPage extends Component {
       }
     });
     months.sort();
+
+    // 2. create data array
     let data = [];
     months.forEach((month) => {
       data.push([month])
     });
+
+    // 3. fill all empty fields with zero
     data.forEach((arr, index) => {
       for (let i = 0; i < columns.length - 1; i++) {
         data[index].push(0)
       }
     });
 
+    // 4. fill data array
     rawData.forEach((transaction) => {
       const providerIndex = columns.indexOf(transaction.provider);
       let dateIndex = months.indexOf(transaction.date.substring(0,7));
@@ -64,9 +79,14 @@ class ChartPage extends Component {
         data.push([transaction.date.substring(0,7)]);
         dateIndex = data.length - 1;
       }
-      data[dateIndex][providerIndex] = (data[dateIndex][providerIndex] || 0) + transaction.amount;
+      // check for types
+      if (this.state.typeFilters[transaction.type]) {
+        data[dateIndex][providerIndex] = (data[dateIndex][providerIndex] || 0) + transaction.amount;
+      }
     });
 
+    // 5. add average and sum
+    let total = 0;
     data = data.map((arr) => {
       let sum = 0;
       for (let i = 1; i < arr.length - 2; i++) {
@@ -74,13 +94,14 @@ class ChartPage extends Component {
       }
       arr[arr.length-2] = Math.round(sum / (arr.length - 3) * 100) / 100;
       arr[arr.length-1] = sum;
+      total += sum;
       return arr;
     });
 
     const chartData = [columns, ...data];
 
     this.setState({
-      carsharingCosts: BankStore.getCosts(),
+      carsharingCosts: Math.round(total * 100) / 100,
       chartData,
       providerColors,
     });
@@ -92,6 +113,7 @@ class ChartPage extends Component {
     this.setState({
       typeFilters,
     });
+    this.getChartData();
   }
 
   handleToggleChartType() {
@@ -114,6 +136,7 @@ class ChartPage extends Component {
               chartData.length ?
                 <Chart chartData={chartData}
                        colors={providerColors}
+                       carsharingCosts={this.state.carsharingCosts}
                        isStacked={this.state.chartIsStacked} /> :
                 null
             }

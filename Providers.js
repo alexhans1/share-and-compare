@@ -2,15 +2,18 @@ const PROVIDERS = {
   DRIVENOW : {
     name: 'DriveNow',
     color: '#0080A6',
+    type: 'car',
     transactionStrings: [
       ['DRIVENOWMUE'],
       ['DriveNow'],
+      ['DRIVENOW'],
       ['SIXT', 'MUE'],
     ],
   },
   CAR2GO : {
     name: 'Car2Go',
     color: '#009ee3',
+    type: 'car',
     transactionStrings: [
       ['DAIMLER AG'],
     ],
@@ -18,6 +21,7 @@ const PROVIDERS = {
   EMMY : {
     name: 'Emmy',
     color: '#EE3124',
+    type: 'scooter',
     transactionStrings: [
       ['emmy-sharing'],
     ],
@@ -25,6 +29,7 @@ const PROVIDERS = {
   DRIVE_BY : {
     name: 'Drive By',
     color: '#45bdac',
+    type: 'car',
     transactionStrings: [
       ['drive by'],
     ],
@@ -32,6 +37,7 @@ const PROVIDERS = {
   COUP : {
     name: 'Coup',
     color: '#61ffd8',
+    type: 'scooter',
     transactionStrings: [
       ['????????'],
     ],
@@ -39,6 +45,7 @@ const PROVIDERS = {
   MULTICITY : {
     name: 'Multicity',
     color: '#a11d6a',
+    type: 'car',
     transactionStrings: [
       ['Multicity'],
     ],
@@ -46,6 +53,7 @@ const PROVIDERS = {
   LIDL_BIKE : {
     name: 'LIDL-BIKE',
     color: '#88B42B',
+    type: 'bike',
     transactionStrings: [
       ['DB RENT GMBHFRANKFURT'],
     ],
@@ -53,6 +61,7 @@ const PROVIDERS = {
   UBEEQO : {
     name: 'Ubeeqo',
     color: '#53C4D1',
+    type: 'car',
     transactionStrings: [
       ['????????'],
     ],
@@ -60,6 +69,7 @@ const PROVIDERS = {
   CAMBIO : {
     name: 'cambio',
     color: '#FF6801',
+    type: 'car',
     transactionStrings: [
       ['????????'],
     ],

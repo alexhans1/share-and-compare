@@ -5,7 +5,6 @@ import dispatcher from "../Dispatcher";
 class BankStore extends EventEmitter {
   constructor() {
     super();
-    this.costs = null;
     this.chartData = null;
     this.providers = null;
     this.banks = null;
@@ -16,10 +15,6 @@ class BankStore extends EventEmitter {
     //   this.emit('fetch');
     // }, 1000)
 
-  }
-
-  getCosts () {
-    return this.costs;
   }
 
   getChartData () {
@@ -54,7 +49,6 @@ class BankStore extends EventEmitter {
         }
       })
       .then((data) => {
-        this.costs = data.total;
         this.providers = data.providers;
         this.chartData = data.chartData;
         this.emit('fetch');

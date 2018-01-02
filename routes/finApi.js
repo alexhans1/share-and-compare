@@ -285,11 +285,13 @@ router.post('/', async (req, res) => {
                     providers.push({
                       name: PROVIDERS[provider].name,
                       color: PROVIDERS[provider].color,
+                      type: PROVIDERS[provider].type,
                     });
                   }
 
                   returnObject = {
                     provider: PROVIDERS[provider].name,
+                    type: PROVIDERS[provider].type,
                     amount: -transaction.amount,
                     date: moment(transaction.bankBookingDate)
                   };
